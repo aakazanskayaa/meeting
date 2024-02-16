@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Даша лох</title>
+  <link rel="stylesheet" href="stylee.css">
+</head>
+<script>   
+
+ function yesNoClick() {
+      var yesButton1 = document.getElementById("yesButton1");
+      if (this.id === "noButton") {
+        this.style.display = "none";
+        yesButton1.style.display = "inline; cursor: pointer";
+        
+      } else 
+        yesButton2.style.display = "none";
+        yesButton1.addEventListener("click");
+      }
+    
+</script>
+<body>
+    
+    <img class= "kartinka" src = "_bender_yapfiles.ru.gif" alt="OldGif" id="oldgif">
+    <div id="buttonContainer">
+    <h1 class="question" id = "OldText">Мы еще встретимся? </h1>
+    <button class="button" id="noButton" onclick="yesNoClick.call(this)"> Нет </button>
+    <button class="button1" id="yesButton1" onclick="changePic(); replaceText(); showDateInput()";> Дa </button>
+</div>
+<script>
+    function changePic() {
+        document.getElementById('oldgif').src = 'https://media.tenor.com/lCKwsD2OW1kAAAAi/happy-cat-happy-happy-cat.gif';
+    }
+    function replaceText() {
+        var newText = "Когда?";
+        document.getElementById("OldText").innerHTML = newText;
+        document.getElementById("yesButton1").remove();
+        document.getElementById("noButton").remove();
+    }
+    function showDateInput() {
+  var dateInput = document.getElementById("dateInput");
+  var timeInput = document.getElementById("timeInput");
+  if (dateInput.style.display === "none") {
+    dateInput.style.display = "block";
+    dateInput.classList.add("visible");
+    timeInput.style.display = "block";
+    timeInput.classList.add("visible");
+  } else {
+    dateInput.style.display = "none";
+    dateInput.classList.remove("visible");
+    timeInput.style.display = "none";
+    timeInput.classList.remove("visible");
+  }
+}
+</script>
+<input type="date" id="dateInput" style="display:none;">
+<input type="time" id="timeInput" class="hidden">  
+</body>
+</html>
